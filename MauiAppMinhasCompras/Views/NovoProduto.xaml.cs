@@ -13,16 +13,7 @@ public partial class NovoProduto : ContentPage
     {
 		try
 		{
-			if (txt_quantidade.Text == "")
-			{
-				txt_quantidade.Text = "0";
-
-            }
-
-			if (txt_preco.Text == "")
-			{
-                txt_preco.Text = "0";
-            }
+			
 
 			Produto p = new Produto
 			{

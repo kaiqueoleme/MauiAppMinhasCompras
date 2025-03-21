@@ -32,8 +32,6 @@ namespace MauiAppMinhasCompras.Models
                     throw new Exception("Por favor, insira um valor diferente de zero para a quantidade");
                 }
 
-                
-
                 _quantidade = value;
             } 
         }

@@ -7,16 +7,11 @@ public partial class RelatorioCateg : ContentPage
 {
     ObservableCollection<Produto> lista = new ObservableCollection<Produto>();
     ObservableCollection<dynamic> TotalPorCategoria = new ObservableCollection<dynamic>();
-
-
-
     public RelatorioCateg()
 	{
 		InitializeComponent();
         lst_categ.ItemsSource = TotalPorCategoria;
-
     }
-
     protected async override void OnAppearing()
     {
         try

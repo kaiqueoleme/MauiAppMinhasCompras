@@ -13,7 +13,6 @@ public partial class ListaProduto : ContentPage
 
 		lst_produtos.ItemsSource = lista;
 
-
     }
 
     protected async override void OnAppearing()

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppMinhasCompras.Views.RelatorioCateg"
+             Title="Relatorio de Gastos"
+             NavigationPage.HasNavigationBar="False">
+                
+    <StackLayout Padding="10">
+        <Label Text="Relatório de Gastos por Categoria" 
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <Frame Padding="0" Margin="10" VerticalOptions="FillAndExpand">
+            <CollectionView x:Name="lst_categ">
+                <CollectionView.Header >
+                    <Grid ColumnDefinitions="*, *"
+                          BackgroundColor="{StaticResource Gray100}">
+                        <Label Grid.Column="0" Text="Categoria" FontAttributes="Bold" Padding="5"/>
+                        <Label Grid.Column="1" Text="Preço Total" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*, *">
+                            <Label Text="{Binding Categoria}"
+                                   FontAttributes="Bold" 
+                                   Grid.Column="0"
+                                   Padding="5"/>
+                            <Label Text="{Binding TotalGasto, StringFormat='R$ {0:F2}'}" 
+                                   HorizontalOptions="EndAndExpand"
+                                   Grid.Column="1"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
+
+        <Button Text="Voltar para as compras"  Margin="10,0,10,10" BackgroundColor="{StaticResource Gray100}"
+        TextColor="{StaticResource Black}" Clicked="Button_Clicked"/>
+    </StackLayout>
+</ContentPage>
